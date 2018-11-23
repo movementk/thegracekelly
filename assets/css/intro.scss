@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+$xs: "320px";
+$sm: "768px";
+$md: "992px";
+$lg: "1200px";
+
+@mixin transition($property: all, $duration: .15s, $timing: linear, $delay: 0s) {
+	-webkit-transition-property: $property;
+    transition-property: $property;
+	-webkit-transition-duration: $duration;
+    transition-duration: $duration;
+	-webkit-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+	-webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin noto() {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+@mixin lora() {
+    font-family: 'Lora', serif;
+}
+
+h1, h2, h3,h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+ul, ol {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+dl {
+    margin-bottom: 0;
+    dd {
+        margin-bottom: 0;
+    }
+}
+
+address {
+    margin-bottom: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+button {
+    &:hover, &:focus {
+        box-shadow: none;
+    }
+}
+
+a {
+	color: #666;
+	&:hover, &:focus {
+		color: #444;
+        box-shadow: none;
+        text-decoration: none;
+	}
+}
+
+.container,
+.container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+    .row {
+        margin-left: -5px;
+        margin-right: -5px;
+        @for $i from 1 through 12 {
+            .col-#{$i},
+            .col-md-#{$i},
+            .col-xl-#{$i} {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    }
+    @media (min-width: $sm) {
+        padding-left: 20px;
+        padding-right: 20px;
+        .row {
+            margin-left: -10px;
+            margin-right: -10px;
+            @for $i from 1 through 12 {
+                .col-#{$i},
+                .col-md-#{$i},
+                .col-xl-#{$i} {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+    @media (min-width: $lg) {
+        padding-left: 15px;
+        padding-right: 15px;
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+            @for $i from 1 through 12 {
+                .col-#{$i},
+                .col-md-#{$i},
+                .col-xl-#{$i} {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+.container {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+body {
+    position: relative;
+    background-color: #444f53;
+}
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    overflow: hidden;
+    article {
+        position: relative;
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        vertical-align: middle;
+        .logo {
+            display: inline-block;
+            padding: 0 20px;
+        }
+        .btn-area {
+            position: absolute;
+            .btn {
+                display: inline-block;
+                padding: 0;
+                border: 0;
+                background: none;
+                .bar {
+                    position: absolute;
+                    display: block;
+                    margin: 0 auto;
+                    width: 56px;
+                    border-top: 1px solid #282f31;
+                    border-bottom: 1px solid #6d7c79;
+                }
+                &.btn-gangnam {
+                    position: relative;
+                    padding-bottom: 25px;
+                    .bar {
+                        bottom: 0;
+                        right: 50%;
+                        margin-right: -28px;
+                    }
+                }
+                &.btn-suseo {
+                    position: relative;
+                    padding-top: 35px;
+                    .bar {
+                        top: 0;
+                        left: 50%;
+                        margin-left: -28px;
+                    }
+                }
+            }
+            &.gangnam {
+                top: 35px;
+                left: 50%;
+                margin-left: -92px;
+            }
+            &.suseo {
+                bottom: 35px;
+                right: 50%;
+                margin-right: -85.5px;
+            }
+        }
+    }
+    @media(min-width: $sm) {
+        article {
+            .logo {
+                padding: 0;
+            }
+            .btn-area {
+                &.gangnam {
+                    top: 70px;
+                    margin-left: -108px;
+                    .btn {
+                        padding-bottom: 60px;
+                    }
+                }
+                &.suseo {
+                    bottom: 70px;
+                    margin-right: -93.5px;
+                    .btn {
+                        padding-top: 75px;
+                    }
+                }
+            }
+        }
+    }
+    @media(min-width: $lg) {
+        article {
+            .btn-area {
+                width: 20%;
+                text-align: center;
+                .btn {
+                    .img-responsive {
+                        display: inline-block;
+                    }
+                    .bar {
+                        display: none;
+                    }
+                }
+                &.gangnam {
+                    top: 50%;
+                    margin-left: 0;
+                    left: 0;
+                    margin-top: -34px;
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        content: "";
+                        width: 2px;
+                        height: 100%;
+                        border-left: 1px solid #282f32;
+                        border-right: 1px solid #5c6f6d;
+                    }
+                    .btn {
+                        padding-bottom: 0;
+                    }
+                }
+                &.suseo {
+                    bottom: 50%;
+                    right: 0;
+                    margin-right: 0;
+                    margin-bottom: -27px;
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        width: 2px;
+                        height: 100%;
+                        border-left: 1px solid #282f32;
+                        border-right: 1px solid #5c6f6d;
+                    }
+                    .btn {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+nav {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 80%;
+    @include transition($duration: 1s);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    &.nav-gangnam {
+        right: 0;
+        bottom: -100%;
+        background-image: url(/assets/images/intro/bg_gangnam_xs.jpg);
+        figure {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            img {
+                position: absolute;
+                bottom: 20px;
+                right: 10px;
+                @media(min-width: $sm) {
+                    bottom: 30px;
+                    right: 30px;
+                }
+                @media(min-width: $lg) {
+                    bottom: 60px;
+                    right: 60px;
+                }
+            }
+        }
+    }
+    &.nav-suseo {
+        left: 0;
+        top: -100%;
+        background-image: url(/assets/images/intro/bg_suseo_xs.jpg);
+    }
+    @media(min-width: $lg) {
+        width: 80%;
+        height: 100%;
+        &.nav-gangnam {
+            right: -100%;
+            bottom: 0;
+            background-image: url(/assets/images/intro/bg_gangnam_lg.jpg);
+        }
+        &.nav-suseo {
+            left: -100%;
+            top: 0;
+            background-image: url(/assets/images/intro/bg_suseo_lg.jpg);
+        }
+    }
+}
+
+.open-gangnam {
+    .nav-gangnam {
+        bottom: 0;
+        @media(min-width: $lg) {
+            right: 0;
+        }
+    }
+}
+
+.open-suseo {
+    .nav-suseo {
+        top: 0;
+        @media(min-width: $lg) {
+            left: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
