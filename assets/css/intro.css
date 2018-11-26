@@ -424,6 +424,8 @@ body {
       #intro article .btn-area.suseo .btn {
         padding-top: 75px; } }
   @media (min-width: 1200px) {
+    #intro article .container {
+      position: relative; }
     #intro article .btn-area {
       width: 20%;
       text-align: center; }

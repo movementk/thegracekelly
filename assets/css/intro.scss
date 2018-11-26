@@ -218,6 +218,9 @@ body {
     }
     @media(min-width: $lg) {
         article {
+            .container {
+                position: relative;
+            }
             .btn-area {
                 width: 20%;
                 text-align: center;
