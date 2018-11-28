@@ -295,14 +295,14 @@ nav {
             img {
                 position: absolute;
                 bottom: 20px;
-                right: 10px;
+                left: 10px;
                 @media(min-width: $sm) {
                     bottom: 30px;
-                    right: 30px;
+                    left: 30px;
                 }
                 @media(min-width: $lg) {
                     bottom: 60px;
-                    right: 60px;
+                    left: 60px;
                 }
             }
         }

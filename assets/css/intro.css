@@ -493,15 +493,15 @@ nav {
       nav.nav-gangnam figure img {
         position: absolute;
         bottom: 20px;
-        right: 10px; }
+        left: 10px; }
         @media (min-width: 768px) {
           nav.nav-gangnam figure img {
             bottom: 30px;
-            right: 30px; } }
+            left: 30px; } }
         @media (min-width: 1200px) {
           nav.nav-gangnam figure img {
             bottom: 60px;
-            right: 60px; } }
+            left: 60px; } }
   nav.nav-suseo {
     left: 0;
     top: -100%;
